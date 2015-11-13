@@ -9,6 +9,11 @@ public class Fleet extends Ownable {
 price=4000;
 
 }
+    /**
+     * Justere prisen for at lande på et Fleet felt efter hvor mange man har, bør opdateres ved køb og salg af Fleet felt.
+     * @param nr
+     * @return
+     */
     public int setRent(int nr){
 switch (nr){
 case 1:
