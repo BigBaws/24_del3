@@ -1,5 +1,8 @@
 package game;
 
+//alle klasser der arver herfra bør benytte players istedet for navnet på spilleren,
+//på den måde kan felter udveksle data og placering.
+//(selve brættet, med felternes placering kan defineres korrekt når felterne fungere)
 public class Field {
     protected String name;
     protected Player[] players = new Player[6];
@@ -30,6 +33,9 @@ public class Field {
                 System.out.print("FEJL");
                 break;
 		}
+		// funktion til at fjerne spiller og sætte arrayet til
+		//at fylde de lavest nummererede pladser først skal tilføjes på smart vis.
+		//evt. fjerne spiller inden han lander på et felt i landsOnField()
 		
 	}
 }
