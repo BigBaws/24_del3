@@ -13,7 +13,7 @@ public Labor(String name){
  * @param dice
  * @return
  */
-public int payrent(int dice){
+public int payRent(int dice){
     rent=100*dice;
     return rent;
 }

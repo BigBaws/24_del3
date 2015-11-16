@@ -35,7 +35,4 @@ case 4:
     }
 return rent;
     }
-    public int getRent(){
-        return rent;
     }
-}

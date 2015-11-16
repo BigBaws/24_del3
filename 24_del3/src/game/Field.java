@@ -4,38 +4,14 @@ package game;
 //på den måde kan felter udveksle data og placering.
 //(selve brættet, med felternes placering kan defineres korrekt når felterne fungere)
 public class Field {
-    protected String name;
-    protected Player[] players = new Player[6];
+protected String name;
     /**
-     * tilføjer spilleren til feltet. indtager spillerens navn.
+     * Benyttes når en spiler lander på et felt.
      * @param player
      */
 	public void landOnField(Player player) {
-		switch (players.length){
-		    case 0:
-		        players[0]=player;
-		    case 1:
-		        players[1]=player;
-		        break;
-		    case 2:
-                players[2]=player;
-                break;
-		    case 3:
-                players[3]=player;
-                break;
-		    case 4:
-                players[4]=player;
-                break;
-		    case 5:
-                players[5]=player;
-                break;
-            default:
-                System.out.print("FEJL");
-                break;
+		//landOnField udspecificeres i overklasserne, 
 		}
-		// funktion til at fjerne spiller og sætte arrayet til
-		//at fylde de lavest nummererede pladser først skal tilføjes på smart vis.
-		//evt. fjerne spiller inden han lander på et felt i landsOnField()
+	
 		
 	}
-}
