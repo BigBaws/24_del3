@@ -1,5 +1,7 @@
 package game;
 
+import desktop_resources.GUI;
+
 public class Ownable extends Field{
 	
 	protected int price;
@@ -37,10 +39,15 @@ public class Ownable extends Field{
 	//@override
 	public void landOnField(Player player){
 	  if (owned=true){
-	      super.payRent(player);
+	      payRent(player);
 	  }
 	  else{
-	      
+	      //evt. restrukturering for at give bredere mulighed, 
+	      //f.eks. at kunne sælge et felt for at få råd til det nye
+	      if(GUI.getUserLeftButtonPressed("Buy "+name+"?", "Buy", "Don't Buy")){
+	          buyField(player);
+	          //else statement der slutter tur?
+	      }
 	      }
 	  }
 }
