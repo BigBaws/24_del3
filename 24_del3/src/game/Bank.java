@@ -1,5 +1,8 @@
 package game;
 
+// Banken skal holde på ejendomme, alt omkring ejendomme skal foregå internt i banken.
+// Der skal laves en metode som der kan trække penge, sætte penge ind på anden konto og som der deler ejendommene ud.
+
 public class Bank{
     
     private int score;
