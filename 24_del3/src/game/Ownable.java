@@ -2,7 +2,7 @@ package game;
 
 import desktop_resources.GUI;
 
-public class Ownable extends Field{
+public abstract class Ownable extends Field{
 	
 	protected int price;
 	protected Player player;
@@ -10,16 +10,16 @@ public class Ownable extends Field{
 	protected boolean owned;
 	
 	/**
-	 * Bruges når en spiller lander på et felt der er ejet af en anden spiller.
+	 * Bruges nï¿½r en spiller lander pï¿½ et felt der er ejet af en anden spiller.
 	 * @param player
 	 */
 	public void payRent(Player player){
 		player.setScore(rent);
 		this.player.setScore(rent);
-		//ejerskab bør defineres, evt. udnytte dele fra landsOnField().
+		//ejerskab bï¿½r defineres, evt. udnytte dele fra landsOnField().
 	}
 	/**
-	 * Når spilleren ønsker at købe et ledigt felt. Tager den aktuelle Player.
+	 * Nï¿½r spilleren ï¿½nsker at kï¿½be et ledigt felt. Tager den aktuelle Player.
 	 * @param player
 	 */
 	public void buyField(Player player){
@@ -28,7 +28,7 @@ public class Ownable extends Field{
 	    owned=true;
 	}
 	/**
-	 * Når spilleren ønsker at sælge et felt. Tager den aktuelle Player.
+	 * Nï¿½r spilleren ï¿½nsker at sï¿½lge et felt. Tager den aktuelle Player.
 	 * @param player
 	 */
 	public void sellField(Player player){
@@ -43,11 +43,35 @@ public class Ownable extends Field{
 	  }
 	  else{
 	      //evt. restrukturering for at give bredere mulighed, 
-	      //f.eks. at kunne sælge et felt for at få råd til det nye
+	      //f.eks. at kunne sï¿½lge et felt for at fï¿½ rï¿½d til det nye
 	      if(GUI.getUserLeftButtonPressed("Buy "+name+"?", "Buy", "Don't Buy")){
 	          buyField(player);
 	          //else statement der slutter tur?
 	      }
 	      }
 	  }
+    public int getPrice() {
+            return price;
+        }
+    public void setPrice(int price) {
+            this.price = price;
+        }
+    public Player getPlayer() {
+            return player;
+        }
+    public void setPlayer(Player player) {
+            this.player = player;
+        }
+    public int getRent() {
+            return rent;
+        }
+    public void setRent(int rent) {
+            this.rent = rent;
+        }
+    public boolean isOwned() {
+            return owned;
+        }
+    public void setOwned(boolean owned) {
+            this.owned = owned;
+        }
 }

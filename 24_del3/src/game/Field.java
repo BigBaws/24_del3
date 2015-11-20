@@ -1,12 +1,12 @@
 package game;
 
-//alle klasser der arver herfra bør benytte players istedet for navnet på spilleren,
-//på den måde kan felter udveksle data og placering.
-//(selve brættet, med felternes placering kan defineres korrekt når felterne fungere)
-public class Field {
+//alle klasser der arver herfra bï¿½r benytte players istedet for navnet pï¿½ spilleren,
+//pï¿½ den mï¿½de kan felter udveksle data og placering.
+//(selve brï¿½ttet, med felternes placering kan defineres korrekt nï¿½r felterne fungere)
+public abstract class Field {
 protected String name;
     /**
-     * Benyttes når en spiler lander på et felt.
+     * Benyttes nï¿½r en spiler lander pï¿½ et felt.
      * @param player
      */
 	public void landOnField(Player player) {
