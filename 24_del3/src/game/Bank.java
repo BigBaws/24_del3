@@ -33,67 +33,102 @@ public class Bank{
 //        player[5] = "player6";
         
     
-    public void Property() {
+    public void Property(Ownable own) {
+        
+        own.getName();
+        int estateValue = estateValue + own.getPrice();
+        
+        String[] estateName;
+        
+        estateName = new String[17];
+        
+        estateName[0] = own.getName();
+        
+    }
+        
+    public void Smthn(){
+        
+        // 1 En metode der kan fortælle hvilke felter man ejer ud fra navn.
+        
+    }
+    
+    public void Smthn2(){
+        
+        // 2 En metode der skal kunne tilføje et felt til Smthn metoden.
+        
+    }
+    
+    public void Smthn3(){
+        
+        // 3 En metode der skal tilføje værdien til et købt felt.
+        
+    }
+    
+    public void Smthn4(){
+        
+        // 4 En metode der holder styr på den totale værdi af alle ejendomme som en spiller ejer.
+        
+    }
+        
         
         // I create an array with the properties that can be bought.
         // estate[x] = the price of the property.
         
-        int[] estate;
-        
-        estate = new int[17];
-        
-        // Creating an array with 17 integers
-        
-        // Tribe Encampment - Territory
-        estate[0] = 1000;
-        
-        // Crater - Territory
-        estate[1] = 1500;
-        
-        // Mountain - Territory
-        estate[2] = 2000;
-        
-        // Cold Desert - Territory
-        estate[3] = 3000;
-        
-        // Black Cave - Territory
-        estate[4] = 4000;
-        
-        // The Warewall - Territory
-        estate[5] = 4300;
-        
-        // Mountain Village - Territory
-        estate[6] = 4750;
-        
-        // South Citadel - Territory
-        estate[7] = 5000;
-        
-        // Palace Gates - Territory
-        estate[8] = 5500;
-        
-        // Tower - Territory
-        estate[9] = 6000;
-        
-        // Castle - Territory
-        estate[10] = 8000;
-        
-        // Huts in the Mountain - Labor camp
-        estate[11] = 2500;
-        
-        // The Pit - Labor camp
-        estate[12] = 2500;
-        
-        // Second Sail - Fleet
-        estate[13] = 4000;
-        
-        // Sea Grover - Fleet
-        estate[14] = 4000;
-        
-        // The Buccaneers - Fleet
-        estate[15] = 4000;
-        
-        // Privateer Armade - Fleet
-        estate[16] = 4000;
-    }
+//        int[] estate;
+//        
+//        estate = new int[17];
+//        
+//        // Creating an array with 17 integers
+//        
+//        // Tribe Encampment - Territory
+//        estate[0] = 1000;
+//        
+//        // Crater - Territory
+//        estate[1] = 1500;
+//        
+//        // Mountain - Territory
+//        estate[2] = 2000;
+//        
+//        // Cold Desert - Territory
+//        estate[3] = 3000;
+//        
+//        // Black Cave - Territory
+//        estate[4] = 4000;
+//        
+//        // The Warewall - Territory
+//        estate[5] = 4300;
+//        
+//        // Mountain Village - Territory
+//        estate[6] = 4750;
+//        
+//        // South Citadel - Territory
+//        estate[7] = 5000;
+//        
+//        // Palace Gates - Territory
+//        estate[8] = 5500;
+//        
+//        // Tower - Territory
+//        estate[9] = 6000;
+//        
+//        // Castle - Territory
+//        estate[10] = 8000;
+//        
+//        // Huts in the Mountain - Labor camp
+//        estate[11] = 2500;
+//        
+//        // The Pit - Labor camp
+//        estate[12] = 2500;
+//        
+//        // Second Sail - Fleet
+//        estate[13] = 4000;
+//        
+//        // Sea Grover - Fleet
+//        estate[14] = 4000;
+//        
+//        // The Buccaneers - Fleet
+//        estate[15] = 4000;
+//        
+//        // Privateer Armade - Fleet
+//        estate[16] = 4000;
     
 }
