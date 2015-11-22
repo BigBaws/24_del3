@@ -13,9 +13,8 @@ super.owned=false;
     /**
      * Justere prisen for at lande på et Fleet felt efter hvor mange man har, bør opdateres ved køb og salg af Fleet felt.
      * @param nr
-     * @return
      */
-    public int setRent(int nr){
+    public void setRent(int nr){
 switch (nr){
 case 1:
     rent=RENT_1;
@@ -33,6 +32,5 @@ case 4:
         
         
     }
-return rent;
     }
     }
