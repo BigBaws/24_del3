@@ -12,6 +12,8 @@ protected String name;
 	public void landOnField(Player player) {
 		//landOnField udspecificeres i overklasserne, 
 		}
-	
+	public String getName(){
+	    return name;
+	}
 		
 	}
