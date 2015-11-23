@@ -7,6 +7,10 @@ public class Bank{
     
     private int score;
     
+//    int[] Owned;
+//    Owned = new int[17];
+
+    
     public Bank(){
         
             score = 30000;      
@@ -35,9 +39,6 @@ public class Bank{
     
     public void Property(Ownable own) {
         
-        own.getName();
-        int estateValue = estateValue + own.getPrice();
-        
         String[] estateName;
         
         estateName = new String[17];
@@ -45,32 +46,41 @@ public class Bank{
         estateName[0] = own.getName();
         
     }
+    private int amount;
+    public int TotalAssets(){
         
-    public void Smthn(){
+        return amount+score;
+        
+    }
+    
+    
+    public void SetEstateValue(int value){
+        
+       amount = amount + value;
         
         // 1 En metode der kan fortælle hvilke felter man ejer ud fra navn.
         
     }
     
-    public void Smthn2(){
-        
-        // 2 En metode der skal kunne tilføje et felt til Smthn metoden.
-        
-    }
-    
-    public void Smthn3(){
-        
-        // 3 En metode der skal tilføje værdien til et købt felt.
-        
-    }
-    
-    public void Smthn4(){
-        
-        // 4 En metode der holder styr på den totale værdi af alle ejendomme som en spiller ejer.
-        
-    }
-        
-        
+//    public void Smthn2(){
+//        
+//        // 2 En metode der skal kunne tilføje et felt til Smthn metoden.
+//        
+//    }
+//    
+//    public void Smthn3(){
+//        
+//        // 3 En metode der skal tilføje værdien til et købt felt.
+//        
+//    }
+//    
+//    public void Smthn4(){
+//        
+//        // 4 En metode der holder styr på den totale værdi af alle ejendomme som en spiller ejer.
+//        
+//    }
+//        
+//        
         // I create an array with the properties that can be bought.
         // estate[x] = the price of the property.
         
