@@ -15,13 +15,19 @@ public class Bank{
         
             score = 30000;      
         }
-    
+    /**
+     * returnere pengebeholdning
+     * @return
+     */
         public int getscore(){
             return score;
         }
-        
+        /**
+         * aedre spillerens pengebeholdning
+         * @param score
+         */
         public void setscore (int score){
-            this.score = score;
+            this.score = this.score + score;
         }
         
         
@@ -47,13 +53,20 @@ public class Bank{
         
     }
     private int amount;
+    /**
+     * returnere bankens totale værd
+     * @return
+     */
     public int TotalAssets(){
         
         return amount+score;
         
     }
     
-    
+    /**
+     * aedre vaedien af spillerens samlede ejendomme.
+     * @param value
+     */
     public void SetEstateValue(int value){
         
        amount = amount + value;
@@ -61,12 +74,14 @@ public class Bank{
         // 1 En metode der kan fortælle hvilke felter man ejer ud fra navn.
         
     }
-    
-//    public void Smthn2(){
-//        
-//        // 2 En metode der skal kunne tilføje et felt til Smthn metoden.
-//        
-//    }
+    /**
+     * skal bruges naar spilleren oensker at saelge et felt, metode skal liste
+     *  alle spillerens felter og give ham mulighed for at saelge ét af dem til banken.
+     */
+    public void sellfields(){
+        
+        
+    }
 //    
 //    public void Smthn3(){
 //        

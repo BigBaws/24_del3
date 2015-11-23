@@ -12,6 +12,10 @@ protected String name;
 	public void landOnField(Player player) {
 		//landOnField udspecificeres i overklasserne, 
 		}
+	/**
+	 * returnere feltets navn
+	 * @return
+	 */
 	public String getName(){
 	    return name;
 	}
