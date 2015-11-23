@@ -1,7 +1,7 @@
 package game;
 
 public class Labor extends Ownable {
-private int baserent;
+private int baserent=100;
 public Labor(String name){
     super.price=2500;
     super.name=name;
@@ -14,7 +14,11 @@ public Labor(String name){
  * @return
  */
 public int payRent(int dice){
-    rent=100*dice;
+    rent=baserent*dice;
     return rent;
+}
+@Override
+public int getRent(){
+    return baserent;
 }
 }

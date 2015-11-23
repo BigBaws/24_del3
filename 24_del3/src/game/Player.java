@@ -54,7 +54,6 @@ public class Player
     public void setOwnedvalue(int value){
     b.SetEstateValue(value);
     
-    
 }
     /**
      * returnere spillerens totale vaerdier, ejendommenes vaerdi samt pengeforsyning.

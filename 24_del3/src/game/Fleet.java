@@ -33,4 +33,8 @@ case 4:
         
     }
     }
+    @Override
+    public int getRent(){
+        return rent;
+    }
     }

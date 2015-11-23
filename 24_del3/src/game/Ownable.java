@@ -13,6 +13,7 @@ public abstract class Ownable extends Field{
 	 * Bruges naar en spiller lander paa et felt der er ejet af en anden spiller.
 	 * @param player
 	 */
+	
 	public void payRent(Player player){
 		player.setScore(-rent);
 		this.player.setScore(rent);
@@ -22,6 +23,7 @@ public abstract class Ownable extends Field{
 	 * Naar spilleren oensker at koebe et ledigt felt. Tager den aktuelle Player.
 	 * @param player
 	 */
+	
 	public void buyField(Player player){
 	    player.setScore(-price);
 	    this.player=player;
@@ -32,13 +34,14 @@ public abstract class Ownable extends Field{
 	 * Naar spilleren oensker at saelge et felt. Tager den aktuelle Player.
 	 * @param player
 	 */
+	
 	public void sellField(Player player){
 	    player.setScore(price);
 	    this.player=null;
 	    player.setOwnedvalue(-price);
 	    owned=false;
 	}
-	//@override
+	@Override
 	public void landOnField(Player player){
 	  if (owned=true){
 	      if (this.player!=player)
@@ -74,49 +77,29 @@ public abstract class Ownable extends Field{
      * aedre prisen på feltet, tager den nye pris.
      * @param price
      */
-    public void setPrice(int price) {
+	    public void setPrice(int price) {
             this.price = price;
         }
     /**
      * henter spillernavnet af ejeren af feltet.
      * @return
      */
+	
     public Player getPlayer() {
             return player;
-        }
-    /**
-     * aendre ejeren af feltet til en anden spiller.
-     * @param player
-     */
-    public void setPlayer(Player player) {
-            this.player = player;
         }
     /**
      * tilbagegiver renten på feltet.
      * @return
      */
-    public int getRent() {
-            return rent;
-        }
-    /**
-     * aedre renten på det aktuelle felt.
-     * @param rent
-     */
-    public void setRent(int rent) {
-            this.rent = rent;
-        }
+    public abstract int getRent();
     /**
      * tilbagegiver ejerskabs statusen (ejet eller ej)
      * @return
      */
+
     public boolean isOwned() {
             return owned;
         }
-    /**
-     * aendre ejerskabs statusen paa feltet (OBS kan give problemer med flere ejer af samme felt)
-     * @param owned
-     */
-    public void setOwned(boolean owned) {
-            this.owned = owned;
-        }
+
 }

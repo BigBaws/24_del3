@@ -9,9 +9,7 @@ protected String name;
      * Benyttes n�r en spiler lander p� et felt.
      * @param player
      */
-	public void landOnField(Player player) {
-		//landOnField udspecificeres i overklasserne, 
-		}
+	public abstract void landOnField(Player player);
 	/**
 	 * returnere feltets navn
 	 * @return
@@ -19,5 +17,5 @@ protected String name;
 	public String getName(){
 	    return name;
 	}
-		
+
 	}
