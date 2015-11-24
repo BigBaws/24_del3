@@ -1,78 +1,133 @@
 package game;
 
-import game.Bank;;
+import java.awt.Color;
+import desktop_codebehind.Car;
+import desktop_resources.GUI;
 
-public class Player 
-{
-    private Bank b = new Bank();
+public class Player extends Bank {
+    
     private String name;
+    private static Player[] id;
+    private int move = 0;
+    
+    public static Player[] addPlayer(int antal) {
+        
+        id = new Player[antal];
+        
+        for (int i = 0; i < antal; i++) {
+            
+            
+//            GUI.displayChanceCard("Type your name");
+//            String name = GUI.getUserString("");
+//            
+//            if (name.equals("")) {
+//                name = "Player"+(i+1);
+//            }
+//            
+//            GUI.displayChanceCard(name + "choose your character");
+//            String cartype = GUI.getUserSelection("", "Car", "RaceCar", "Tractor", "Ufo");
+//            
+//            Car.Builder builder = new Car.Builder();
+//
+//            switch (cartype) {
+//                default:
+//                case "Car": builder.typeCar(); break;
+//                case "RaceCar": builder.typeRacecar(); break;
+//                case "Tractor": builder.typeTractor(); break;
+//                case "Ufo": builder.typeUfo(); break;
+//            }
+//
+//            GUI.displayChanceCard(name + "choose "+cartype+" color");
+//            String color = GUI.getUserSelection("", "Red", "Blue", "Green", "Yellow", "White", "Black", "Pink", "Magenta", "Grey");
+//            
+//            switch (color) {
+//                default:
+//                case "Red":
+//                    builder.primaryColor(Color.RED); break;
+//                case "Blue":
+//                    builder.primaryColor(Color.BLUE); break;
+//                case "Green":
+//                    builder.primaryColor(Color.GREEN); break;
+//                case "Yellow":
+//                    builder.primaryColor(Color.YELLOW); break;
+//                case "White":
+//                    builder.primaryColor(Color.WHITE); break;
+//                case "Black":
+//                    builder.primaryColor(Color.BLACK); break;
+//                case "Pink":
+//                    builder.primaryColor(Color.PINK); break;
+//                case "Magenta":
+//                    builder.primaryColor(Color.MAGENTA); break;
+//                case "Grey":
+//                    builder.primaryColor(Color.DARK_GRAY); break;
+//                    
+//                }
+//            
+//            Car car = builder.build();
 
-    public Player(String name) 
-    {
+            String name = "Player"+i;
+            Player player = new Player(name);
+            id[i] = player;
+            
+            Bank bank = new Bank();
+
+            GUI.addPlayer(name, bank.getMoney());
+ //           GUI.addPlayer(name, bank.getMoney(), car);
+//            GUI.setCar(1, name);
+        }
+        
+        return id;
+    }
+    
+    public Player(String name) {
         this.name = name;
     }
-/**
- * returnere spillerens navn
- * @return
- */
-    public String getName() 
-    {
+    
+    public String getName() {
         return name;
     }
-/**
- * aendre spillerens navn, tager nyt navn.
- * @param name
- */
-    public void setName(String name) 
-    {
-        this.name = name;
-    }
-/**
- * returnere spillerens pengebeholdning
- * @return
- */
-    public int getScore() 
-    {
-        return b.getscore();
-    }
-/**
- * aendre spillerens pengebeholdning, og forhindre at denne bliver negativ (OBS. bør redigeres)
- * @param score
- */
-    public void setScore(int score) 
-    {
-        b.setscore(score);
-        if (b.getscore() < 0) 
-        {
-            b.setscore(0);
-        }
-    }
-    /**
-     * aedre på værdien af spillerens felter (bør kun bruges i forbindelse af køb eller salg) 
-     * @param value
-     */
-    public void setOwnedvalue(int value){
-    b.SetEstateValue(value);
     
-}
-    /**
-     * returnere spillerens totale vaerdier, ejendommenes vaerdi samt pengeforsyning.
-     * @return
-     */
-    public int gettotalassets(){
-        return b.TotalAssets();
-        }
-    /**
-     * benyttes til at saelge felter.
-     */
-    public void sellfields(){
-        b.sellfields();
+    public void movePlayer(Player player, int move) {
+        
+        if (this.move == 0) {
+            this.move = move;
+            GUI.setCar(move, player.getName());
+        } else if (this.move + move > Field.getNumberOfFields()) {
+            int go = this.move + move;
+            int newmove = go%Field.getNumberOfFields();
             
+            GUI.removeCar(this.move, player.getName());
+            this.move = newmove;
+            GUI.setCar(newmove, player.getName());
+        } else {
+            GUI.removeCar(this.move, player.getName());
+            this.move = this.move + move;
+            GUI.setCar(this.move, player.getName());
+        }
+        
     }
-    public void setOwned(Field field){
-        b.setOwned(field);
+    
+    public Player removePlayer() {
+        return null;
     }
-//    public Player declareBankrupsy(){
-//    return this;
-//}
+    
+    public int getPlayerPosition() {
+        return this.move;
+    }
+
+  
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+        if (getClass() != obj.getClass()) return false;
+        Player other = (Player) obj;
+        if (name == null) {
+            if (other.name != null) return false;
+        } else if (!name.equals(other.name)) return false;
+        return true;
+    }
+    
+
 }
