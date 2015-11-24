@@ -1,40 +1,59 @@
 package game;
 
 public class Fleet extends Ownable {
+    
+    protected String fieldname;
+    
     private int RENT_1 = 500;
     private int RENT_2 = 1000;
     private int RENT_3 = 2000;
     private int RENT_4 = 4000;
+    
     public Fleet(String name) {
-super.price=4000;
-super.name=name;
-super.owned=false;
-}
+        super(name);
+        super.fieldprice = 4000;
+        super.fieldowned = false;
+    }
     /**
-     * Justere prisen for at lande på et Fleet felt efter hvor mange man har, bør opdateres ved køb og salg af Fleet felt.
+     * Justere prisen for at lande pï¿½ et Fleet felt efter hvor mange man har, bï¿½r opdateres ved kï¿½b og salg af Fleet felt.
      * @param nr
+     * @return
      */
-    public void setRent(int nr){
-switch (nr){
-case 1:
-    rent=RENT_1;
-    break;
-case 2:
-    rent=RENT_2;
-    break;
-case 3:
-    rent=RENT_3;
-    break;
-case 4:
-    rent=RENT_4;
-    break;
-            
+    @Override
+    public int getRent() {
+        int fieldrent = 0;
+        int count = 0;
         
+        for (Field f : field) {
+            if (f instanceof Fleet) {
+                Fleet fleet = (Fleet) f;
+                if (fleet.fieldowned && fleet.fieldowner.equals(fieldowner)) {
+                    count++;
+                }
+            }
+        }
+        
+        
+        switch (count) {
+            case 1: fieldrent = RENT_1; break;
+            case 2: fieldrent = RENT_2; break;
+            case 3: fieldrent = RENT_3; break;
+            case 4: fieldrent = RENT_4; break;       
+        }
+        
+        return fieldrent;
         
     }
+    
+    @Override
+    public String getName() {
+        return fieldname;
     }
     @Override
-    public int getRent(){
-        return rent;
+    public int getPrice() {
+        return fieldprice;
     }
-    }
+    
+    
+    
+}
