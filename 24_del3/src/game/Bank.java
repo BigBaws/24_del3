@@ -1,10 +1,12 @@
 package game;
 
+import desktop_resources.GUI;
+
 // Banken skal holde på ejendomme, alt omkring ejendomme skal foregå internt i banken.
 // Der skal laves en metode som der kan trække penge, sætte penge ind på anden konto og som der deler ejendommene ud.
 
 public class Bank{
-    private Field[] properties = new Field[17];
+    private Ownable[] properties = new Ownable[17];
     private int score;
     
 //    int[] Owned;
@@ -87,6 +89,11 @@ public class Bank{
     public void sellfields(){
         //metoden skal fjerne et felt fra properties arrayet og erstate det med null,
         //og give spilleren pengene fra feltet igen.
+        GUI.getUserSelection("Which of your properties do you wish to sell", properties[0].getName(),properties[1].getName()
+            ,properties[2].getName(),properties[3].getName(),properties[4].getName(),properties[5].getName(),
+            properties[6].getName(),properties[7].getName(),properties[8].getName(),properties[9].getName(),
+            properties[10].getName(), properties[11].getName(), properties[12].getName(), properties[13].getName(),
+            properties[14].getName(), properties[15].getName(), properties[16].getName(),properties[17].getName());
         
     }
     public void setOwned(Field field){
