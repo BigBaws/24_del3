@@ -9,6 +9,7 @@ import desktop_resources.GUI;
 public abstract class Field {
     
     protected String fieldname;
+
     protected static Field[] field;
     
     public static Field[] createFields() {
@@ -27,14 +28,14 @@ public abstract class Field {
             new Territory ("Castle", 4000, 8000),
             new Refuge ("Walled City", 5000),
             new Refuge ("Monastery", 500),
-            new Labor ("Huts int the mountain"),
+            new Labor ("Huts"),
             new Labor ("The Pit"),
             new Tax ("Goldmine", 2000),
             new Tax ("Caravan", 4000),
             new Fleet ("Second Sail"),
             new Fleet ("Sea Grover"),
-            new Fleet ("The Buccaneers"),
-            new Fleet ("Privateer Armade")
+            new Fleet ("Buccaneers"),
+            new Fleet ("Armade")
         };
         
         desktop_fields.Field list[] = new desktop_fields.Field[field.length];
@@ -46,17 +47,18 @@ public abstract class Field {
                     .setTitle(field[i].fieldname)
                     .setDescription("Rent: "+field[i].getRent()+"")
                     .setSubText("Costs: "+field[i].getPrice()+"")
-                    .setBgColor(Color.YELLOW)
-                    .setFgColor(Color.RED)
+                    .setBgColor(Color.DARK_GRAY)
+                    .setFgColor(Color.WHITE)
                     .build();
                 
             } else if (fields instanceof Refuge) {
                 list[i] = new desktop_fields.Refuge.Builder()
                     .setTitle(field[i].fieldname)
                     .setDescription("Bonus: "+field[i].getRent()+"")
-                    .setSubText("Costs: "+field[i].getPrice()+"")
-                    .setBgColor(Color.YELLOW)
-                    .setFgColor(Color.RED)
+                    .setSubText("Bonus")
+                    .setPicture("GUI/desktop_resources/pics/money.png")
+                    .setBgColor(Color.GREEN)
+                    .setFgColor(Color.BLACK)
                     .build();
                 
             } else if (fields instanceof Labor) {
@@ -64,7 +66,7 @@ public abstract class Field {
                     .setTitle(field[i].fieldname)
                     .setDescription("Rent: 100xDices")
                     .setSubText("Pay 100 x DiceSum")
-                    .setBgColor(Color.RED)
+                    .setBgColor(Color.DARK_GRAY)
                     .setRent(""+field[i].getRent())
                     .setPicture(field[i].getName())
                     .build(); 
@@ -80,7 +82,8 @@ public abstract class Field {
                     .setTitle(field[i].fieldname)
                     .setDescription("Rent: 500-4000")
                     .setSubText("500 per owned Fleet")
-                    .setBgColor(Color.YELLOW)
+                    .setBgColor(Color.BLUE)
+                    .setFgColor(Color.WHITE)
                     .setRent("500-4000")
                     .build();
             }
