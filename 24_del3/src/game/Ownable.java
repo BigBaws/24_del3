@@ -9,6 +9,7 @@ public abstract class Ownable extends Field{
 	protected int rent;
 	protected boolean owned;
 	
+	
 	/**
 	 * Bruges naar en spiller lander paa et felt der er ejet af en anden spiller.
 	 * @param player
@@ -28,6 +29,7 @@ public abstract class Ownable extends Field{
 	    player.setScore(-price);
 	    this.player=player;
 	    player.setOwnedvalue(price);
+	    player.setOwned(this);
 	    owned=true;
 	}
 	/**
@@ -43,13 +45,28 @@ public abstract class Ownable extends Field{
 	}
 	@Override
 	public void landOnField(Player player){
+	    turn=true;
 	  if (owned=true){
 	      if (this.player!=player)
 	      payRent(player);
+	      String choice=GUI.getUserSelection("What do you wish to do?", "2. Sell fields" , "3. End turn");
+          switch(choice){ 
+          case "2. Sell fields":
+              //evt. tilføj måde så spiller ikke kan sælge hvis han ikke ejer noget.
+             boolean sell=true;
+              while(sell){
+                  player.sellfields();
+                  sell=GUI.getUserLeftButtonPressed("Do you wish to sell more? ", "Continue selling", "Done selling");
+              }
+          case "3. End turn":
+              turn=false;
+              break;
+	  }
 	  }
 	  else{
 	      //evt. restrukturering for at give bredere mulighed, 
 	    //f.eks. at kunne saelge et felt for at faa raad til det nye
+	      while (turn){
 	     String choice=GUI.getUserSelection("What do you wish to do?", "1. Buy ", "2. Sell fields" , "3. End turn");
 	         switch(choice){ 
 	         case "1. Buy ":
@@ -61,8 +78,10 @@ public abstract class Ownable extends Field{
 	                 sell=GUI.getUserLeftButtonPressed("Do you wish to sell more? ", "Continue selling", "Done selling");
 	             }
 	         case "3. End turn":
+	             turn=false;
 	             break;
 	          //else statement der slutter tur?
+	      }
 	      }
 	      }
 	  }

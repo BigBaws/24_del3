@@ -69,4 +69,10 @@ public class Player
         b.sellfields();
             
     }
+    public void setOwned(Field field){
+        b.setOwned(field);
+    }
+//    public Player declareBankrupsy(){
+//    return this;
+//}
 }

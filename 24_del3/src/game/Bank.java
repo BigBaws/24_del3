@@ -4,7 +4,7 @@ package game;
 // Der skal laves en metode som der kan trække penge, sætte penge ind på anden konto og som der deler ejendommene ud.
 
 public class Bank{
-    
+    private Field[] properties = new Field[17];
     private int score;
     
 //    int[] Owned;
@@ -28,6 +28,12 @@ public class Bank{
          */
         public void setscore (int score){
             this.score = this.score + score;
+            if(score<0 && amount+score>0){
+                while(score<0){
+                sellfields();
+            }
+         // lav en else der bruger en metode i spiller der sender spilleren selv til lukning i game (spørg hvis i tvivl)
+            }
         }
         
         
@@ -43,15 +49,15 @@ public class Bank{
 //        player[5] = "player6";
         
     
-    public void Property(Ownable own) {
-        
-        String[] estateName;
-        
-        estateName = new String[17];
-        
-        estateName[0] = own.getName();
-        
-    }
+//    public void Property(Ownable own) {
+//        
+//        String[] estateName;
+//        
+//        estateName = new String[17];
+//        
+//        estateName[0] = own.getName();
+//        
+//    }
     private int amount;
     /**
      * returnere bankens totale værd
@@ -79,8 +85,15 @@ public class Bank{
      *  alle spillerens felter og give ham mulighed for at saelge ét af dem til banken.
      */
     public void sellfields(){
+        //metoden skal fjerne et felt fra properties arrayet og erstate det med null,
+        //og give spilleren pengene fra feltet igen.
         
-        
+    }
+    public void setOwned(Field field){
+       // find en maade at lave et sorteret field array (array er oprettet ved navn "properties".
+        //til noed kan en switch(fieldname) med case til hvert felt bruges 
+            
+        }
     }
 //    
 //    public void Smthn3(){
@@ -156,4 +169,3 @@ public class Bank{
 //        // Privateer Armade - Fleet
 //        estate[16] = 4000;
     
-}

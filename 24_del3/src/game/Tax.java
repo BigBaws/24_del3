@@ -20,7 +20,8 @@ public class Tax extends Field{
 	        choice=GUI.getUserLeftButtonPressed("Do you wish to pay 10% of total assets = "+player.gettotalassets()+"or pay "+taxAmount, "10% of assets", "Pay "+taxAmount);
 	if (choice)
 	player.setScore((player.gettotalassets()/10)*taxRate);
-	    
+	else
+	    player.setScore(taxRate*taxAmount);
 	    }
 }
 }

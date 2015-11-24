@@ -4,7 +4,7 @@ import desktop_resources.GUI;
 
 public class Game {
 
-	private static Fields[] list;
+
 	private static Dice[] dice = { new Dice(), new Dice() };
 	
 	public static void main(String[] args) {
@@ -12,27 +12,43 @@ public class Game {
 	}
 	
 	public Game() {
-		// Create Fields
-        Field Field = new Field();
+		// Create Fields, Both GUI and game logic fields.
+        Fields Field = new Fields();
 		
         // How many Players?
-        int NumberofPlayers = GUI.getUserSelection("", "2 Players", "3 Players", "4 Players", "5 Players", "6 Players");
+        String numberOfPlayers = GUI.getUserSelection("How many players wish to participate?", "2 Players", "3 Players", "4 Players", "5 Players", "6 Players");
         
         // Create Player 1,2,3,4,5,6
-        Player Player1 = new Player();
-        Player Player2 = new Player();
-        Player Player3 = new Player();
-        Player Player4 = new Player();
-        Player Player5 = new Player();
-        Player Player6 = new Player();
+        switch(numberOfPlayers){
+            case "6 Players":
+                String playerinput;
+              playerinput= GUI.getUserString("Player 6 type your name");
+                Player Player6 = new Player(playerinput);
+            case "5 Players":
+                playerinput= GUI.getUserString("Player 5 type your name");
+                Player Player5 = new Player(playerinput);
+            case "4 Players":
+                playerinput= GUI.getUserString("Player 4 type your name");
+                Player Player4 = new Player(playerinput);
+            case "3 Players":
+                playerinput= GUI.getUserString("Player 3 type your name");
+                Player Player3 = new Player(playerinput);
+            case "2 Players":
+                playerinput= GUI.getUserString("Player 2 type your name");
+                Player Player2 = new Player(playerinput);
+                playerinput= GUI.getUserString("Player 1 type your name");
+                Player Player1 = new Player(playerinput);
+                // beskriv en tur i en metode. lav while loop der kører indtil der kun er en spiller.
+                // lav en lose metode der fjerner spilleren.
+        }
+ 
+        }
         
-        // Create Players Bank with start Money
-        Bank Player1Bank = new Bank(Player1.PlayerName);
-        Bank Player2Bank = new Bank(Player2.PlayerName);
-        Bank Player3Bank = new Bank(Player3.PlayerName);
-        Bank Player4Bank = new Bank(Player4.PlayerName);
-        Bank Player5Bank = new Bank(Player5.PlayerName);
-        Bank Player6Bank = new Bank(Player6.PlayerName);
+        
+        
+        
+        
+        
+
 	}
 
-}

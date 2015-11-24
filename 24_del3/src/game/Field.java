@@ -5,6 +5,7 @@ package game;
 //(selve br�ttet, med felternes placering kan defineres korrekt n�r felterne fungere)
 public abstract class Field {
 protected String name;
+protected boolean turn=true;
     /**
      * Benyttes n�r en spiler lander p� et felt.
      * @param player
