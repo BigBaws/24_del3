@@ -37,12 +37,12 @@ public abstract class Ownable extends Field{
 	 * @param player
 	 */
 	
-	public void sellField(Player player){
-	    player.setScore(price);
-	    this.player=null;
-	    player.setOwnedvalue(-price);
-	    owned=false;
-	}
+//	public void sellField(Player player){
+//	    player.setScore(price);
+//	    this.player=null;
+//	    player.setOwnedvalue(-price);
+//	    owned=false;
+//	}
 	@Override
 	public void landOnField(Player player){
 	    turn=true;
