@@ -37,9 +37,20 @@ public class Game {
         while (true) {
             
             for (int i = 0; i < players.length; i++) {
+                int playersleft = 1;
                 
+            	// If a player is bankrupt
                 if (players[i].getMoney() < 0) {
+                	//Remove all players assets
+                	
+                	playersleft++;
                     continue;
+                }
+                
+                // If there is only one player left
+                if (players.length == playersleft) {
+                    GUI.displayChanceCard(""+players[i]+" have won the game");
+                	break;
                 }
                 
                 // Roll Dices
