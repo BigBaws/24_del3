@@ -15,7 +15,7 @@ public class Fleet extends Ownable {
         super.fieldowned = false;
     }
     /**
-     * Justere prisen for at lande p� et Fleet felt efter hvor mange man har, b�r opdateres ved k�b og salg af Fleet felt.
+     * Justere prisen for at lande paa et Fleet felt efter hvor mange man har, b�r opdateres ved k�b og salg af Fleet felt.
      * @param nr
      * @return
      */

@@ -82,11 +82,18 @@ public class Player extends Bank {
     public Player(String name) {
         this.name = name;
     }
-    
+    /**
+     * Method gets the name of the player.
+     * @return String Playername
+     */
     public String getName() {
         return name;
     }
-    
+    /**
+     * Method moves the player in the GUI
+     * @param player
+     * @param move
+     */
     public void movePlayer(Player player, int move) {
         
         if (this.move == 0) {
@@ -106,11 +113,17 @@ public class Player extends Bank {
         }
         
     }
-    
+    /**
+     * Used to remove a player from the game.
+     * @return null
+     */
     public Player removePlayer() {
         return null;
     }
-    
+    /**
+     * Method gets the position the player is on the board.
+     * @return int position
+     */
     public int getPlayerPosition() {
         return this.move;
     }

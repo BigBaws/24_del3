@@ -13,16 +13,17 @@ public class Bank {
         money = 30000; 
     }
     
-    /**
-     * This is how we fetch how much money a player has
-     */
+  /**
+   * This method returns the amount of money the player is in possession of
+   * @return int money
+   */
     public int getMoney() {
         return this.money;
     }
     
     /**
-     * This is how you pay money to the bank
-     * @param payamount
+     * This method is used to decrease the amount of money the player possess
+     * @param int payamount
      */
     public void payMoney (int payamount) {
         int newbalance = (this.money - payamount);
@@ -31,8 +32,8 @@ public class Bank {
     
 
     /**
-     * This is how we set a players money
-     * @param newbalance
+     * This method increases the amount of money the player possess
+     * @param int newbalance
      */
     public void giveMoney (int newmoney) {
         this.money = (this.money + newmoney);

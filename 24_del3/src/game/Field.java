@@ -12,6 +12,10 @@ public abstract class Field {
 
     protected static Field[] field;
     
+    /**
+     * creates both fields for both the GUI and game to interact with.
+     * @return Field[]
+     */
     public static Field[] createFields() {
         
         field = new Field[] { 
@@ -92,13 +96,23 @@ public abstract class Field {
         return field;
     }
     
-    
+    /**
+     * This method is used when a player lands on a field. landOnField defines what happens when a player lands on a field.
+     * @param
+     */
     public abstract void landOnField(Player player);  
     
+    /**
+     * Method returns the number of fields created.
+     * @return numberOfFields
+     */
     public static int getNumberOfFields() {
         return field.length;
     }
-    
+    /**
+     * Method returns the name of the field.
+     * @return fieldName
+     */
     public String getName() {
         return fieldname;
     }
@@ -107,7 +121,16 @@ public abstract class Field {
         this.fieldname = name;
     }
     
+    /**
+     * Method gets the rent of the field.
+     * @return rentoffield
+     */
     public abstract int getRent();
+    
+    /**
+     * Method gets the price of the field.
+     * @return Priceoffield
+     */
     public abstract int getPrice();
     
     
