@@ -4,8 +4,8 @@ import java.awt.Color;
 import desktop_codebehind.Car;
 import desktop_resources.GUI;
 
-public class Player extends Bank {
-    
+public class Player {
+    private Bank bank;
     private String name;
     private static Player[] id;
     private int move = 0;
@@ -69,9 +69,9 @@ public class Player extends Bank {
             Player player = new Player(name);
             id[i] = player;
             
-            Bank bank = new Bank();
+            
 
-            GUI.addPlayer(name, bank.getMoney());
+            GUI.addPlayer(name, player.getMoney());
  //           GUI.addPlayer(name, bank.getMoney(), car);
 //            GUI.setCar(1, name);
         }
@@ -81,6 +81,7 @@ public class Player extends Bank {
     
     public Player(String name) {
         this.name = name;
+        Bank bank = new Bank();
     }
     /**
      * Method gets the name of the player.
@@ -141,6 +142,13 @@ public class Player extends Bank {
         } else if (!name.equals(other.name)) return false;
         return true;
     }
-    
-
+    public int getMoney(){
+        return bank.getMoney();
+    }
+public void payMoney(int payamount){
+    bank.payMoney(payamount);
+}
+public void giveMoney(int newamount){
+    bank.giveMoney(newamount);
+}
 }
