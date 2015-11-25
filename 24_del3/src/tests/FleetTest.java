@@ -1,7 +1,10 @@
-package game;
+package tests;
 
 import static org.junit.Assert.*;
+import org.junit.Before;
 import org.junit.Test;
+import game.Fleet;
+import game.Player;
 
 public class FleetTest {
     private Player player1;
@@ -23,8 +26,10 @@ testfleet4= new Fleet("Fruen");
     
     @Test
     public void landon1owned() {
-       int expected=player1.getMoney()-testfleet1.getRent();
+       int expected=player1.getMoney()-500;
         testfleet1.buyField(player2);
+        testfleet1.landOnField(player1);
+        assertEquals(expected, player1.getMoney());
         
     }
     
