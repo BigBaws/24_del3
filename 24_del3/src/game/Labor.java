@@ -17,10 +17,7 @@ public class Labor extends Ownable {
     }
     
     public int getDiceValue() {
-//        Dice dice;
-//        return dice.getSum();
-        
-        return 2;
+        return dice.getSum();
     }
 
     @Override

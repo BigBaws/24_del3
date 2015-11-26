@@ -12,7 +12,7 @@ import desktop_resources.GUI;
 public abstract class Field {
     
     protected String fieldname;
-
+    protected Dice dice;
     protected static Field[] field;
     
     /**
@@ -47,7 +47,7 @@ public abstract class Field {
         
         desktop_fields.Field list[] = new desktop_fields.Field[field.length];
         
-        // Shuffle Fields
+        // We shuffle the array list field, so every game has a random board.
         java.util.List<?> lists = (java.util.List<?>) Arrays.asList(field);
         Collections.shuffle(lists);
         
@@ -82,6 +82,7 @@ public abstract class Field {
                     .setRent(""+field[i].getRent())
                     .setPicture(field[i].getName())
                     .build(); 
+                
             } else if (fields instanceof Tax) {
                 list[i] = new desktop_fields.Tax.Builder()
                     .setTitle(field[i].fieldname)
@@ -89,6 +90,7 @@ public abstract class Field {
                     .setSubText("Rent: "+field[i].getRent()+"")
                     .setBgColor(Color.RED)
                     .build(); 
+                
             } else if (fields instanceof Fleet) {
                 list[i] = new Shipping.Builder()
                     .setTitle(field[i].fieldname)
