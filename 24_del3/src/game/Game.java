@@ -61,7 +61,7 @@ public class Game {
                 // Move Player
                 players[i].movePlayer(players[i], Dice.getSum());
                 
-                // FIX -1
+                // This determains what action will accure depending on the field type.
                 fields[players[i].getPlayerPosition()-1].landOnField(players[i]);
                 
                 

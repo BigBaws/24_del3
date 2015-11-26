@@ -58,10 +58,10 @@ public abstract class Ownable extends Field {
 			GUI.setBalance(player.getName(), player.getMoney());
 			GUI.setBalance(this.fieldowner.getName(), this.fieldowner.getMoney());
 			
-			if (player.getName() == fieldowner.getName()) {
+			if (player == fieldowner) {
 	            GUI.displayChanceCard("<center>"+player.getName()+" have landed on<br>"+fieldname+"<br><br>This field is your own field.");
 			} else {
-	            GUI.displayChanceCard("<center>"+player.getName()+" have landed on<br>"+fieldname+"<br><br>This field is owned by:<br>"+fieldowner.getName()+"<br><br>You paid "+field[player.getPlayerPosition()].getRent()+" in rent");
+	            GUI.displayChanceCard("<center>"+player.getName()+" have landed on<br>"+fieldname+"<br><br>This field is owned by:<br>"+fieldowner.getName()+"<br><br>You paid   "+field[player.getPlayerPosition()].getRent()+"   in rent");
 			}
 
 

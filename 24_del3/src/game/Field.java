@@ -113,13 +113,6 @@ public abstract class Field {
     public abstract void landOnField(Player player);  
     
     /**
-     * Method returns the number of fields created.
-     * @return numberOfFields
-     */
-    public static int getNumberOfFields() {
-        return field.length;
-    }
-    /**
      * Method returns the name of the field.
      * @return fieldName
      */
