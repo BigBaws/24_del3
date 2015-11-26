@@ -16,7 +16,7 @@ public abstract class Field {
     protected static Field[] field;
     
     /**
-     * creates both fields for both the GUI and game to interact with.
+     * creates the fields for both the GUI and gamelogic to interact with.
      * @return Field[]
      */
     public static Field[] createFields() {
