@@ -56,8 +56,8 @@ public abstract class Field {
             if (fields instanceof Territory) {
                 list[i] = new Street.Builder()
                     .setTitle(field[i].fieldname)
-                    .setDescription("Rent: "+field[i].getRent()+"")
                     .setSubText("Costs: "+field[i].getPrice()+"")
+                    .setDescription("Rent: "+field[i].getRent()+"")
                     .setBgColor(Color.DARK_GRAY)
                     .setFgColor(Color.WHITE)
                     .build();
@@ -65,7 +65,7 @@ public abstract class Field {
             } else if (fields instanceof Refuge) {
                 list[i] = new desktop_fields.Refuge.Builder()
                     .setTitle(field[i].fieldname)
-                    .setDescription("Bonus: "+field[i].getRent()+"")
+                    .setDescription("You collect "+field[i].getRent()+"")
                     .setSubText("Bonus")
                     .setPicture("GUI/desktop_resources/pics/money.png")
                     .setBgColor(Color.GREEN)
@@ -76,7 +76,7 @@ public abstract class Field {
                 list[i] = new Brewery.Builder()
                     .setTitle(field[i].fieldname)
                     .setDescription("Rent: 100xDices")
-                    .setSubText("Pay 100 x DiceSum")
+                    .setSubText("")
                     .setBgColor(Color.YELLOW)
                     .setFgColor(Color.BLACK)
                     .setRent("100xDices")
@@ -87,7 +87,7 @@ public abstract class Field {
                 list[i] = new desktop_fields.Tax.Builder()
                     .setTitle(field[i].fieldname)
                     .setDescription("TAX: "+field[i].getRent()+"")
-                    .setSubText("Rent: "+field[i].getRent()+"")
+                    .setSubText("Pay "+field[i].getRent()+" in TAXES")
                     .setBgColor(Color.RED)
                     .build(); 
                 
@@ -95,10 +95,10 @@ public abstract class Field {
                 list[i] = new Shipping.Builder()
                     .setTitle(field[i].fieldname)
                     .setDescription("Rent: 500-4000")
-                    .setSubText("500 per owned Fleet")
+                    .setSubText("")
                     .setBgColor(Color.BLUE)
                     .setFgColor(Color.WHITE)
-                    .setRent("500-4000")
+                    .setRent("500 per owned Fleet")
                     .build();
             }
         }
