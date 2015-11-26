@@ -79,7 +79,7 @@ public abstract class Field {
                     .setSubText("Pay 100 x DiceSum")
                     .setBgColor(Color.YELLOW)
                     .setFgColor(Color.BLACK)
-                    .setRent(""+field[i].getRent())
+                    .setRent("100xDices")
                     .setPicture(field[i].getName())
                     .build(); 
                 
