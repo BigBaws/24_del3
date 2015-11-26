@@ -12,12 +12,8 @@ public class Labor extends Ownable {
  
     @Override
     public int getRent() {
-        int fieldrent = 100 * getDiceValue();
+        int fieldrent = 100 * dice.getSum();
         return fieldrent;
-    }
-    
-    public int getDiceValue() {
-        return dice.getSum();
     }
 
     @Override
