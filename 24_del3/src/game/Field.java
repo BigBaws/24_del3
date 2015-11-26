@@ -124,6 +124,9 @@ public abstract class Field {
         this.fieldname = name;
     }
     
+    public static int getNumberOfFields() {
+        return field.length;
+    }
     /**
      * Method gets the rent of the field.
      * @return rentoffield
