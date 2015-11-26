@@ -77,7 +77,8 @@ public abstract class Field {
                     .setTitle(field[i].fieldname)
                     .setDescription("Rent: 100xDices")
                     .setSubText("Pay 100 x DiceSum")
-                    .setBgColor(Color.DARK_GRAY)
+                    .setBgColor(Color.YELLOW)
+                    .setFgColor(Color.BLACK)
                     .setRent(""+field[i].getRent())
                     .setPicture(field[i].getName())
                     .build(); 
