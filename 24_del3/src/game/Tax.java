@@ -13,9 +13,9 @@ public class Tax extends Field {
     
     @Override
     public void landOnField(Player player){
+    	GUI.displayChanceCard("<center>"+player.getName()+" have landed on<br>"+fieldname+"<br><br>You paid "+taxAmount+".");
         player.payMoney(taxAmount);
         GUI.setBalance(player.getName(), player.getMoney());
-        GUI.displayChanceCard("<center>"+player.getName()+" have landed on<br>"+fieldname+"<br><br>You paid "+taxAmount+".");
     }
 
     @Override

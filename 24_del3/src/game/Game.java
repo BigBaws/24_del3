@@ -65,8 +65,6 @@ public class Game {
                 fields[players[i].getPlayerPosition()-1].landOnField(players[i]);
                 
                 
-                
-                
             }
             
         }

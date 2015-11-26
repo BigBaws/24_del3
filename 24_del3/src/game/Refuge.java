@@ -13,7 +13,7 @@ public class Refuge extends Field {
     }
     
     public void landOnField(Player player){
-        GUI.displayChanceCard("You will get "+bonus);
+    	GUI.displayChanceCard("<center>"+player.getName()+" have landed on<br>"+fieldname+"<br><br>You get "+bonus+".");
         player.giveMoney(bonus);
         GUI.setBalance(player.getName(), player.getMoney());
     }
