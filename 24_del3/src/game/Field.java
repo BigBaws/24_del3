@@ -1,6 +1,9 @@
 package game;
 
 import java.awt.Color;
+import java.util.Arrays;
+import java.util.Collections;
+
 import desktop_fields.Brewery;
 import desktop_fields.Shipping;
 import desktop_fields.Street;
@@ -43,6 +46,10 @@ public abstract class Field {
         };
         
         desktop_fields.Field list[] = new desktop_fields.Field[field.length];
+        
+        // Shuffle Fields
+        java.util.List<?> lists = (java.util.List<?>) Arrays.asList(field);
+        Collections.shuffle(lists);
         
         for (int i = 0; i < field.length; i++) {
             Field fields = field[i];
