@@ -32,5 +32,22 @@ testfleet4= new Fleet("Fruen");
         assertEquals(expected, player1.getMoney());
         
     }
-    
+    @Test
+    public void landonmultipleownedfleets() {
+       int expected=player1.getMoney()-2000;
+        testfleet1.buyField(player2);
+        testfleet2.buyField(player2);
+        testfleet1.landOnField(player1);
+        testfleet2.landOnField(player1);
+        assertEquals(expected, player1.getMoney());
+    }
+    @Test
+    public void landon3owned() {
+       int expected=player1.getMoney()-500;
+        testfleet1.buyField(player2);
+        testfleet3.buyField(player2);
+        testfleet3.buyField(player2);
+        testfleet1.landOnField(player1);
+        assertEquals(expected, player1.getMoney());
+    }
 }
