@@ -77,7 +77,6 @@ public abstract class Field {
                     .setTitle(field[i].fieldname)
                     .setDescription("Rent: 100xDices")
                     .setSubText("")
-                    .setPicture("GUI/desktop_resources/pics/dices.png")
                     .setBgColor(Color.YELLOW)
                     .setFgColor(Color.BLACK)
                     .setRent("100xDices")
