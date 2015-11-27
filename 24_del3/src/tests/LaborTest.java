@@ -26,8 +26,10 @@ public class LaborTest {
     @Test
     public void landon1owned() {
         int expected=player1.getMoney()-100*dice.getSum();
-        testcamp.buyField(player2);
-        testcamp.landOnField(player1);
+        testcamp.getStatus();
+        testcamp.setStatus(true);
+        testcamp.setOwner(player2);
+        testcamp.payRent(player1);
         assertEquals(expected, player1.getMoney());
     }
     

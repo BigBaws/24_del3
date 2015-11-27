@@ -21,7 +21,8 @@ public class RefugeTest {
     @Test
     public void landon1owned() {
         int expected=player1.getMoney()+500;
-        testRefuge.landOnField(player1);
+        testRefuge.getRent();
+        player1.giveMoney(testRefuge.getRent());
         assertEquals(expected, player1.getMoney());
     }
 }

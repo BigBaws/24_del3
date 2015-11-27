@@ -19,7 +19,8 @@ public class TaxTest {
     @Test
     public void landon1owned() {
         int expected=player1.getMoney()-2000;
-        testTax.landOnField(player1);
+        int tax = testTax.getRent();
+        player1.giveMoney(-tax);
         assertEquals(expected, player1.getMoney());
     }
 }

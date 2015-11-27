@@ -76,8 +76,11 @@ public abstract class Ownable extends Field {
             GUI.displayChanceCard("<center>"+player.getName()+" have landed on<br>"+fieldname+"<br><br>you can buy this field for <br>"+fieldprice+"");
             
             if (player.getMoney() >= fieldprice) {
-                GUI.getUserLeftButtonPressed(""+player.getName()+"", "Buy "+fieldname+" for "+fieldprice+"", "Don't Buy");
-                buyField(player);
+                boolean foo = GUI.getUserLeftButtonPressed(""+player.getName()+"", "Buy "+fieldname+" for "+fieldprice+"", "Don't Buy");
+                if (foo) {
+                    buyField(player);
+                }
+                
             } else {
                 boolean boo = GUI.getUserLeftButtonPressed(""+player.getName()+"", "Sell all fields", "Go Bankrupt");
                 if (boo) {
