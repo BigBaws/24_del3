@@ -53,7 +53,7 @@ public class Game {
                     for (int x = 0; x < players.length; x++) {
                         
                         if (players[x].bankrupt() == false) {
-                            GUI.displayChanceCard("<center>"+players[x].getName()+" have won the game with a total of <br><br> "+players[x].getAssets()+"");
+                            GUI.displayChanceCard("<center>"+players[x].getName()+" have won the game with a total of <br><br> "+players[x].getAssets()+"<br>assets.");
                             GUI.showMessage("");
                             return;
                         }
