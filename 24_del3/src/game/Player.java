@@ -18,11 +18,11 @@ public class Player {
         for (int i = 0; i < antal; i++) {
             
             
-            GUI.displayChanceCard("Type your name");
+            GUI.displayChanceCard("Type in your name");
             String name = GUI.getUserString("");
             
             if (name.equals("")) {
-                name = "Player"+(i+1);
+                name = "Player "+(i+1);
             }
             
             GUI.displayChanceCard(name + " choose your character");
@@ -38,8 +38,8 @@ public class Player {
                 case "Ufo": builder.typeUfo(); break;
             }
             
-            GUI.displayChanceCard(name + " choose "+cartype+" color");
-            String color = GUI.getUserSelection("", "Red", "Blue", "Green", "Yellow", "White", "Black", "Pink", "Magenta", "Grey");
+            GUI.displayChanceCard(name + " choose your "+cartype+" color");
+            String color = GUI.getUserSelection("", "Red", "Blue", "Green", "Yellow", "White", "Black", "Pink", "Magenta", "Grey", "Orange", "Cyan");
             
             switch (color) {
                 default:
@@ -51,7 +51,9 @@ public class Player {
                 case "Black": builder.primaryColor(Color.BLACK); break;
                 case "Pink": builder.primaryColor(Color.PINK); break;
                 case "Magenta": builder.primaryColor(Color.MAGENTA); break;
-                case "Grey": builder.primaryColor(Color.DARK_GRAY); break;    
+                case "Grey": builder.primaryColor(Color.LIGHT_GRAY); break;
+                case "Orange": builder.primaryColor(Color.ORANGE); break;
+                case "Cyan": builder.primaryColor(Color.CYAN); break;
             }
             
             Car car = builder.build();
