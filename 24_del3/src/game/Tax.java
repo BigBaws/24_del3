@@ -13,11 +13,11 @@ public class Tax extends Field {
     
     @Override
     public void landOnField(Player player){
-    	GUI.displayChanceCard("<center>"+player.getName()+" have landed on<br>"+fieldname+"<br><br>You paid "+taxAmount+".");
+        GUI.displayChanceCard("<center>"+player.getName()+" have landed on a TAX field<br><br>You paid "+taxAmount+".");
         player.payMoney(taxAmount);
         GUI.setBalance(player.getName(), player.getMoney());
     }
-
+    
     @Override
     public int getRent() {
         return taxAmount;

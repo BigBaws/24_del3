@@ -4,7 +4,7 @@ import java.awt.Color;
 import desktop_codebehind.Car;
 import desktop_resources.GUI;
 
-public class Player {
+public class Player extends Bank {
 	private Bank bank;
 	private String name;
 	private static Player[] id;
@@ -137,13 +137,13 @@ public class Player {
 		return true;
 	}
 
-	public int getMoney(){
-		return bank.getMoney();
-	}
-	public void payMoney(int payamount){
-		bank.payMoney(payamount);
-	}
-	public void giveMoney(int newamount){
-		bank.giveMoney(newamount);
-	}
+//	public int getMoney(){
+//		return bank.getMoney();
+//	}
+//	public void payMoney(int payamount){
+//		bank.payMoney(payamount);
+//	}
+//	public void giveMoney(int newamount){
+//		bank.giveMoney(newamount);
+//	}
 }
