@@ -45,8 +45,16 @@ public class Tax extends Field {
                 if (player.getMoney() > taxAmount) {
                     player.payMoney(taxAmount);
                 } else {
-                    sellAllFields(player);
-                    player.payMoney(taxAmount);
+                    boolean foo = GUI.getUserLeftButtonPressed(""+player.getName()+" you need to pay "+taxAmount+"", "Sell all fields", "Go Bankrupt");
+                    if (foo) {
+                        sellAllFields(player);
+                        player.payMoney(taxAmount);
+                    } else {
+                        sellAllFields(player);
+                        player.payMoney(taxAmount);
+                        player.payMoney(player.getMoney()+1);
+                        GUI.setBalance(player.getName(), player.getMoney());
+                    }
                 }
                 GUI.displayChanceCard("<center>"+player.getName()+" have landed on a TAX field<br><br>You paid "+taxAmount+".");
             }
