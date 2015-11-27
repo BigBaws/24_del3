@@ -25,7 +25,7 @@ public class Player {
                 name = "Player "+(i+1);
             }
             
-            GUI.displayChanceCard(name + " choose your character");
+            GUI.displayChanceCard(name + " choose your type of car");
             String cartype = GUI.getUserSelection("", "Car", "RaceCar", "Tractor", "Ufo");
             
             Car.Builder builder = new Car.Builder();
