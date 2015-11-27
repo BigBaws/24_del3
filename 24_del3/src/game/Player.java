@@ -25,7 +25,7 @@ public class Player {
                 name = "Player"+(i+1);
             }
             
-            GUI.displayChanceCard(name + "choose your character");
+            GUI.displayChanceCard(name + " choose your character");
             String cartype = GUI.getUserSelection("", "Car", "RaceCar", "Tractor", "Ufo");
             
             Car.Builder builder = new Car.Builder();
@@ -38,7 +38,7 @@ public class Player {
                 case "Ufo": builder.typeUfo(); break;
             }
             
-            GUI.displayChanceCard(name + "choose "+cartype+" color");
+            GUI.displayChanceCard(name + " choose "+cartype+" color");
             String color = GUI.getUserSelection("", "Red", "Blue", "Green", "Yellow", "White", "Black", "Pink", "Magenta", "Grey");
             
             switch (color) {
