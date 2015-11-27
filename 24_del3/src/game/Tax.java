@@ -36,7 +36,7 @@ public class Tax extends Field {
                         player.payMoney(player.getMoney()+1);
                         GUI.setBalance(player.getName(), player.getMoney());
                     }
-
+                    
                 }
                 
                 GUI.displayChanceCard("<center>"+player.getName()+" have landed on a TAX field<br><br>You paid "+payamount+".");
@@ -60,9 +60,21 @@ public class Tax extends Field {
             }
             GUI.setBalance(player.getName(), player.getMoney());
         } else {
-            player.payMoney(taxAmount);
-            GUI.setBalance(player.getName(), player.getMoney());
-            GUI.displayChanceCard("<center>"+player.getName()+" have landed on a TAX field<br><br>You paid "+taxAmount+".");
+            
+            if (player.getMoney() < taxAmount) {
+                boolean foo = GUI.getUserLeftButtonPressed(""+player.getName()+" you need to pay "+taxAmount+"", "Sell all fields", "Go Bankrupt");
+                if (foo) {
+                    sellAllFields(player);
+                    player.payMoney(taxAmount);
+                } else {
+                    sellAllFields(player);
+                    player.payMoney(player.getMoney()+1);
+                    GUI.setBalance(player.getName(), player.getMoney());
+                }
+            } else {
+                GUI.displayChanceCard("<center>"+player.getName()+" have landed on a TAX field<br><br>You paid "+taxAmount+".");
+            }
+            
         }
         
         
