@@ -60,7 +60,6 @@ public class Player {
             id[i] = player;
             
             GUI.addPlayer(name, player.getMoney(), car);
-            GUI.setCar(1, name);
         }
         
         return id;
