@@ -3,8 +3,7 @@ package tests;
 import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
-import game.Fleet;
-import game.Player;
+import game.*;
 
 public class FleetTest {
     private Player player1;
@@ -16,38 +15,47 @@ public class FleetTest {
     
     @Before
     public void setUp(){
-player1= new Player("Lars");
-player2= new Player("Svend");
-testfleet1= new Fleet("Dåsen");
-testfleet2= new Fleet("Fisken");
-testfleet3= new Fleet("Hajen");
-testfleet4= new Fleet("Fruen");
+        player1= new Player("Lars");
+        player2= new Player("Svend");
+        testfleet1= new Fleet("DÃ¥sen");
+        testfleet2= new Fleet("Fisken");
+        testfleet3= new Fleet("Hajen");
+        testfleet4= new Fleet("Fruen");
+        
     }
     
     @Test
     public void landon1owned() {
-       int expected=player1.getMoney()-500;
-        testfleet1.buyField(player2);
-        testfleet1.landOnField(player1);
+        int expected=player1.getMoney()-500;
+        testfleet1.setStatus(true);
+        testfleet1.setOwner(player2);
+        testfleet1.payRent(player1);
         assertEquals(expected, player1.getMoney());
         
     }
     @Test
     public void landonmultipleownedfleets() {
-       int expected=player1.getMoney()-2000;
-        testfleet1.buyField(player2);
-        testfleet2.buyField(player2);
-        testfleet1.landOnField(player1);
-        testfleet2.landOnField(player1);
+        int expected=player1.getMoney()-2000;
+        testfleet1.setStatus(true);
+        testfleet1.setOwner(player2);       
+        testfleet2.setStatus(true);
+        testfleet2.setOwner(player2);
+        
+        testfleet1.payRent(player1);
+        testfleet2.payRent(player1);
         assertEquals(expected, player1.getMoney());
     }
     @Test
     public void landon3owned() {
-       int expected=player1.getMoney()-500;
-        testfleet1.buyField(player2);
-        testfleet3.buyField(player2);
-        testfleet3.buyField(player2);
-        testfleet1.landOnField(player1);
+        int expected=player1.getMoney()-2000;
+        testfleet1.setStatus(true);
+        testfleet1.setOwner(player2);       
+        testfleet2.setStatus(true);
+        testfleet2.setOwner(player2);
+        testfleet3.setStatus(true);
+        testfleet3.setOwner(player2);       
+
+        testfleet1.payRent(player1);
         assertEquals(expected, player1.getMoney());
     }
 }

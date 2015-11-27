@@ -92,6 +92,20 @@ public abstract class Ownable extends Field {
         }
     }
     
+    public void setStatus(boolean boo) {
+        fieldowned = boo;
+    }
     
+    public boolean getStatus() {
+        return fieldowned;
+    }
+    
+    public void setOwner(Player player) {
+        fieldowner = player;
+    }
+    
+    public Player getOwner() {
+        return fieldowner;
+    }
     
 }

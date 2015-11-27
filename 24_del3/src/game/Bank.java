@@ -9,7 +9,7 @@ public class Bank {
      * This is only used when a new player is created, and this function gives the player 30000
      */
     public Bank() {
-        money = 3000; 
+        money = 30000; 
         assets = 0;
     }
     

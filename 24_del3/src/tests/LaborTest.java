@@ -16,18 +16,18 @@ public class LaborTest {
     
     @Before
     public void setUp(){
-player1= new Player("Lars");
-player2= new Player("Svend");
-testcamp= new Labor("Camp");
-dice= new Dice();
-
+        player1= new Player("Lars");
+        player2= new Player("Svend");
+        testcamp= new Labor("Camp");
+        dice= new Dice();
+        
     }
     
     @Test
     public void landon1owned() {
-       int expected=player1.getMoney()-100*dice.getSum();
-       testcamp.buyField(player2);
-       testcamp.landOnField(player1);
+        int expected=player1.getMoney()-100*dice.getSum();
+        testcamp.buyField(player2);
+        testcamp.landOnField(player1);
         assertEquals(expected, player1.getMoney());
     }
     

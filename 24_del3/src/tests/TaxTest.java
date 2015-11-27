@@ -12,14 +12,14 @@ public class TaxTest {
     
     @Before
     public void setUp(){
-player1= new Player("Lars");
-testTax= new Tax("Skat",2000);
-    
+        player1= new Player("Lars");
+        testTax= new Tax("Skat", 2000, "false");
+        
     }
     @Test
     public void landon1owned() {
-       int expected=player1.getMoney()-2000;
+        int expected=player1.getMoney()-2000;
         testTax.landOnField(player1);
         assertEquals(expected, player1.getMoney());
-}
+    }
 }

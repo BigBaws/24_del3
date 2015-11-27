@@ -13,15 +13,15 @@ public class RefugeTest {
     
     @Before
     public void setUp(){
-player1= new Player("Lars");
-player2= new Player("Svend");
-testRefuge= new Refuge("Fuge",500);    
-    
+        player1= new Player("Lars");
+        player2= new Player("Svend");
+        testRefuge= new Refuge("Fuge",500);    
+        
     }
     @Test
     public void landon1owned() {
-       int expected=player1.getMoney()+500;
+        int expected=player1.getMoney()+500;
         testRefuge.landOnField(player1);
         assertEquals(expected, player1.getMoney());
-}
+    }
 }
