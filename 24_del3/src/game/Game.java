@@ -6,7 +6,6 @@ public class Game {
     
     private static Player[] players;
     private static Field[] fields;   
-    private Dice dice;
     
     public static void main(String[] args) {
         new Game();
@@ -17,8 +16,7 @@ public class Game {
         // Create Fields
         fields = Field.createFields();
         
-        // Load the Dices
-        dice = new Dice();
+        
         
         // How many Players?
         String NumberofPlayers = GUI.getUserSelection("", "2 Players", "3 Players", "4 Players", "5 Players", "6 Players");
@@ -38,20 +36,33 @@ public class Game {
         while (true) {
             
             for (int i = 0; i < players.length; i++) {
-                int playersleft = 1;
                 
-            	// If a player is bankrupt
-                if (players[i].getMoney() < 0) {
-                	//Remove all players assets
-                	
-                	playersleft++;
-                    continue;
+                int count = 1;
+                
+                for (int x = 0; x < players.length; x++) {
+                    
+                    if (players[x].bankrupt()) {
+                        count++;
+                    }
                 }
                 
                 // If there is only one player left
-                if (players.length == playersleft) {
-                    GUI.displayChanceCard(""+players[i]+" have won the game");
-                	break;
+                if (count == players.length) {
+                    
+                    for (int x = 0; x < players.length; x++) {
+                        
+                        if (players[x].bankrupt() == false) {
+                            GUI.displayChanceCard(""+players[x].getName()+" have won the game");
+                            GUI.showMessage("");
+                            return;
+                        }
+                    }
+                    
+                }
+                
+                // If a player is bankrupt
+                if (players[i].getAssets() < 0) {
+                    continue;
                 }
                 
                 // Roll Dices
@@ -64,16 +75,13 @@ public class Game {
                 
                 // This determains what action will accure depending on the field type.
                 fields[players[i].getPlayerPosition()-1].landOnField(players[i]);
-                
+                players[i].bankrupt();
                 
             }
             
         }
- 
+        
     }
     
-    public int getGameDice() {
-        return Dice.getSum();
-    }
     
 }

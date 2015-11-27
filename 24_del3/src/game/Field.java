@@ -36,8 +36,8 @@ public abstract class Field {
             new Refuge ("Monastery", 500),
             new Labor ("Huts"),
             new Labor ("The Pit"),
-            new Tax ("Goldmine", 2000),
-            new Tax ("Caravan", 4000),
+            new Tax ("Goldmine", 2000, "false"),
+            new Tax ("Caravan", 4000, "special"),
             new Fleet ("Second Sail"),
             new Fleet ("Sea Grover"),
             new Fleet ("Buccaneers"),
@@ -111,6 +111,50 @@ public abstract class Field {
      */
     public abstract void landOnField(Player player);  
     
+    public void sellAllFields(Player player) {
+        
+        for (int i = 0; i < field.length; i++) {
+            
+            if (field[i] instanceof Territory) {
+                Territory territory = (Territory) field[i];
+                if (territory.fieldowned && territory.fieldowner.equals(player)) {
+                    player.giveMoney(territory.fieldprice);
+                    territory.fieldowned = false;
+                    territory.fieldowner = null;
+                    player.setAssets(-territory.fieldprice);
+                    GUI.removeOwner(i+1);
+                    GUI.setBalance(player.getName(), player.getMoney());
+                }
+            }
+            
+            if (field[i] instanceof Labor) {
+                Labor labor = (Labor) field[i];
+                if (labor.fieldowned && labor.fieldowner.equals(player)) {
+                    player.giveMoney(labor.fieldprice);
+                    labor.fieldowned = false;
+                    labor.fieldowner = null;
+                    player.setAssets(-labor.fieldprice);
+                    GUI.removeOwner(i+1);
+                    GUI.setBalance(player.getName(), player.getMoney());
+                }
+            }
+            
+            if (field[i] instanceof Fleet) {
+                Fleet fleet = (Fleet) field[i];
+                if (fleet.fieldowned && fleet.fieldowner.equals(player)) {
+                    player.giveMoney(fleet.fieldprice);
+                    fleet.fieldowned = false;
+                    fleet.fieldowner = null;
+                    player.setAssets(-fleet.fieldprice);
+                    GUI.removeOwner(i+1);
+                    GUI.setBalance(player.getName(), player.getMoney());
+                }
+            }
+            
+            
+        }
+        
+    } 
     /**
      * Method returns the name of the field.
      * @return fieldName
