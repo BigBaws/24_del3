@@ -111,6 +111,9 @@ public abstract class Field {
      */
     public abstract void landOnField(Player player);  
     
+    /*
+     * This method will sell all player assets
+     */
     public void sellAllFields(Player player) {
         
         for (int i = 0; i < field.length; i++) {

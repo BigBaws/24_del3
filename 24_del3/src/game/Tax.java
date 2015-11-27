@@ -17,6 +17,7 @@ public class Tax extends Field {
     public void landOnField(Player player){
         
         if (this.special == "special") {
+            GUI.displayChanceCard("<center>"+player.getName()+" have landed on a TAX field");
             boolean boo = GUI.getUserLeftButtonPressed(""+player.getName()+"", "Pay 10%", "Pay "+taxAmount+"");
             
             if (boo) {
