@@ -61,7 +61,7 @@ public abstract class Ownable extends Field {
 			if (player == fieldowner) {
 	            GUI.displayChanceCard("<center>"+player.getName()+" have landed on<br>"+fieldname+"<br><br>This field is your own field.");
 			} else {
-	            GUI.displayChanceCard("<center>"+player.getName()+" have landed on<br>"+fieldname+"<br><br>This field is owned by:<br>"+fieldowner.getName()+"<br><br>You paid   "+field[player.getPlayerPosition()].getRent()+"   in rent");
+	            GUI.displayChanceCard("<center>"+player.getName()+" have landed on<br>"+fieldname+"<br><br>This field is owned by:<br>"+fieldowner.getName()+"<br><br>You paid   "+field[player.getPlayerPosition()-1].getRent()+"   in rent");
 			}
 
 
@@ -69,7 +69,7 @@ public abstract class Ownable extends Field {
             GUI.displayChanceCard("<center>"+player.getName()+" have landed on<br>"+fieldname+"<br><br>you can buy this field for <br>"+fieldprice+"");
 
 			if (player.getMoney() >= fieldprice) {
-				GUI.getUserLeftButtonPressed("Buy "+fieldname+"?", "Buy", "Don't Buy");
+				GUI.getUserLeftButtonPressed("", "Buy "+fieldname+" for "+fieldprice+"", "Don't Buy");
 				buyField(player);
 			} else {
 				GUI.getUserLeftButtonPressed("Sell Fields?", "Sell", "Don't Sell");

@@ -12,7 +12,6 @@ import desktop_resources.GUI;
 public abstract class Field {
     
     protected String fieldname;
-    protected Dice dice;
     protected static Field[] field;
     
     /**

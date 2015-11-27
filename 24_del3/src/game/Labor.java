@@ -3,17 +3,18 @@ package game;
 public class Labor extends Ownable {
     protected String fieldname;
     private int baserent;
+    Dice dice = new Dice();
      
     public Labor(String name) {
         super(name);
         super.fieldprice=2500;
         super.fieldowned=false;
     }
- 
+
     @Override
     public int getRent() {
         int fieldrent = 100 * dice.getSum();
-        return 2;
+        return fieldrent;
     }
 
     @Override

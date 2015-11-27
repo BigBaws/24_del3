@@ -6,6 +6,7 @@ public class Game {
     
     private static Player[] players;
     private static Field[] fields;   
+    private Dice dice;
     
     public static void main(String[] args) {
         new Game();
@@ -17,7 +18,7 @@ public class Game {
         fields = Field.createFields();
         
         // Load the Dices
-        Dice Dice = new Dice();
+        dice = new Dice();
         
         // How many Players?
         String NumberofPlayers = GUI.getUserSelection("", "2 Players", "3 Players", "4 Players", "5 Players", "6 Players");
@@ -69,6 +70,10 @@ public class Game {
             
         }
  
+    }
+    
+    public int getGameDice() {
+        return Dice.getSum();
     }
     
 }
