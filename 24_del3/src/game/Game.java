@@ -42,6 +42,7 @@ public class Game {
                 for (int x = 0; x < players.length; x++) {
                     
                     if (players[x].bankrupt()) {
+                        GUI.removeCar(players[x].getPlayerPosition()+1, players[x].getName());
                         count++;
                     }
                 }
