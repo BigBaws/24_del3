@@ -1,6 +1,7 @@
 package game;
 
 public class Labor extends Ownable {
+    
     protected String fieldname;
     Dice dice = new Dice();
      

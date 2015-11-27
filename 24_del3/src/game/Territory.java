@@ -2,9 +2,7 @@ package game;
 
 public class Territory extends Ownable {
     
-//  protected Player player;
     protected String fieldname;
-//  protected int fieldprice;
     private int fieldrent;
 
     public Territory(String name, int fieldrent, int fieldvalue) {
