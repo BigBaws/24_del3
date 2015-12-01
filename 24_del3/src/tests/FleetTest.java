@@ -13,8 +13,11 @@ public class FleetTest {
     private Fleet testfleet3;
     private Fleet testfleet4;
     
+    Field[] fields = Field.createFields();
+    
     @Before
     public void setUp(){
+        
         player1= new Player("Lars");
         player2= new Player("Svend");
         testfleet1= new Fleet("Dåsen");
@@ -27,9 +30,31 @@ public class FleetTest {
     @Test
     public void landon1owned() {
         int expected=player1.getMoney()-500;
-        testfleet1.setStatus(true);
-        testfleet1.setOwner(player2);
-        testfleet1.payRent(player1);
+        int count = 0;
+        
+        while (count < 1) {
+            for (Field f : fields) {
+                if (f instanceof Fleet) {
+                    Fleet fleet = (Fleet) f;
+                    if (fleet.getStatus() == false) {
+                        fleet.setOwner(player2);
+                        fleet.setStatus(true);
+                        count++;
+                        break;
+                    }
+                }
+            }
+        }
+        
+        for (Field f : fields) {
+            if (f instanceof Fleet) {
+                Fleet fleet = (Fleet) f;
+                if (fleet.getOwner() == player2) {
+                    fleet.payRent(player1);
+                    break;
+                }
+            }
+        }
         assertEquals(expected, player1.getMoney());
         
     }
@@ -54,7 +79,7 @@ public class FleetTest {
         testfleet2.setOwner(player2);
         testfleet3.setStatus(true);
         testfleet3.setOwner(player2);       
-
+        
         testfleet1.payRent(player1);
         assertEquals(expected, player1.getMoney());
     }
