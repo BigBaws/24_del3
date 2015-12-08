@@ -17,7 +17,8 @@ public class FleetTest {
         
         player1= new Player("Lars");
         player2= new Player("Svend");
-
+        player1.movePlayer(player1, 1);
+        player2.movePlayer(player2, 1);
         
     }
     
@@ -31,8 +32,7 @@ public class FleetTest {
                 if (f instanceof Fleet) {
                     Fleet fleet = (Fleet) f;
                     if (fleet.getStatus() == false) {
-                        fleet.setOwner(player2);
-                        fleet.setStatus(true);
+                        fleet.buyField(player2);
                         count++;
                         break;
                     }
@@ -63,8 +63,7 @@ public class FleetTest {
                 if (f instanceof Fleet) {
                     Fleet fleet = (Fleet) f;
                     if (fleet.getStatus() == false) {
-                        fleet.setOwner(player2);
-                        fleet.setStatus(true);
+                        fleet.buyField(player2);
                         count++;
                         break;
                     }
@@ -106,8 +105,7 @@ public class FleetTest {
                 if (f instanceof Fleet) {
                     Fleet fleet = (Fleet) f;
                     if (fleet.getStatus() == false) {
-                        fleet.setOwner(player2);
-                        fleet.setStatus(true);
+                        fleet.buyField(player2);
                         count++;
                         break;
                     }
