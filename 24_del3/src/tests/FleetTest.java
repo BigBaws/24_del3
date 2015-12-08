@@ -60,27 +60,77 @@ public class FleetTest {
     }
     @Test
     public void landonmultipleownedfleets() {
-        int expected=player1.getMoney()-2000;
-        testfleet1.setStatus(true);
-        testfleet1.setOwner(player2);       
-        testfleet2.setStatus(true);
-        testfleet2.setOwner(player2);
         
-        testfleet1.payRent(player1);
-        testfleet2.payRent(player1);
+        int expected=player1.getMoney()-2000;
+        int count = 0;
+        
+        while (count < 2) {
+            for (Field f : fields) {
+                if (f instanceof Fleet) {
+                    Fleet fleet = (Fleet) f;
+                    if (fleet.getStatus() == false) {
+                        fleet.setOwner(player2);
+                        fleet.setStatus(true);
+                        count++;
+                        break;
+                    }
+                }
+            }
+        }
+        
+        for (Field f : fields) {
+            if (f instanceof Fleet) {
+                Fleet fleet = (Fleet) f;
+                if (fleet.getOwner() == player2) {
+                    fleet.payRent(player1);
+                    break;
+                }
+            }
+        }
+        
+        for (Field f : fields) {
+            if (f instanceof Fleet) {
+                Fleet fleet = (Fleet) f;
+                if (fleet.getOwner() == player2) {
+                    fleet.payRent(player1);
+                    break;
+                }
+            }
+        }
+        
         assertEquals(expected, player1.getMoney());
+        
     }
+    
     @Test
     public void landon3owned() {
         int expected=player1.getMoney()-2000;
-        testfleet1.setStatus(true);
-        testfleet1.setOwner(player2);       
-        testfleet2.setStatus(true);
-        testfleet2.setOwner(player2);
-        testfleet3.setStatus(true);
-        testfleet3.setOwner(player2);       
+        int count = 0;
         
-        testfleet1.payRent(player1);
+        while (count < 3) {
+            for (Field f : fields) {
+                if (f instanceof Fleet) {
+                    Fleet fleet = (Fleet) f;
+                    if (fleet.getStatus() == false) {
+                        fleet.setOwner(player2);
+                        fleet.setStatus(true);
+                        count++;
+                        break;
+                    }
+                }
+            }
+        }
+        
+        for (Field f : fields) {
+            if (f instanceof Fleet) {
+                Fleet fleet = (Fleet) f;
+                if (fleet.getOwner() == player2) {
+                    fleet.payRent(player1);
+                    break;
+                }
+            }
+        }
         assertEquals(expected, player1.getMoney());
+        
     }
 }
