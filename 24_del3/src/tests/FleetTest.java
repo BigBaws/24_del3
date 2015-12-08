@@ -8,10 +8,7 @@ import game.*;
 public class FleetTest {
     private Player player1;
     private Player player2;
-    private Fleet testfleet1;
-    private Fleet testfleet2;
-    private Fleet testfleet3;
-    private Fleet testfleet4;
+
     
     Field[] fields = Field.createFields();
     
@@ -20,10 +17,7 @@ public class FleetTest {
         
         player1= new Player("Lars");
         player2= new Player("Svend");
-        testfleet1= new Fleet("Dåsen");
-        testfleet2= new Fleet("Fisken");
-        testfleet3= new Fleet("Hajen");
-        testfleet4= new Fleet("Fruen");
+
         
     }
     
